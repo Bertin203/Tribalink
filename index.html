@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Cards Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        .buttons-container {
+            align-items: center;
+            padding: 32px;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        #foto{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 10px rgb(43, 26, 26);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Aldeia Pataxó </h2>
+        <div class="buttons-container">
+            <button onclick="setCoordinates(-16.335115253435106, -39.01722660631203, 'Aldeia Pataxó')">Buscar no Mapa</button>
+            <img id="foto" src="imgpataxo.png" alt="Imagem da Aldeia Pataxó">
+        </div>
+    </div> 
+
+    <div class="card">
+        <h2>Reserva Indígena Thá-Fene </h2>
+        <div class="buttons-container">
+            <button onclick="setCoordinates(-12.860564995209662, -38.32782879853511, 'Reserva Indígena Thá-Fene')">Buscar no Mapa</button>
+            <img id="foto" src="imgpataxo.png" alt="Imagem da Aldeia Pataxó">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Reserva Indígena Águas Belas </h2>
+        <div class="buttons-container">
+            <button onclick="setCoordinates(-16.924583546925366, -39.27702487658548, 'Reserva Indígena Águas Belas')">Buscar no Mapa</button>
+            <img id="foto" src="imgpataxo.png" alt="Imagem da Aldeia Pataxó">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Aldeia Velha</h2>
+        <div class="buttons-container">
+            <button onclick="setCoordinates(-16.47147576980708, -39.08119451376766, 'Aldeia Velha ')">Buscar no Mapa</button>
+            <img id="foto" src="imgpataxo.png" alt="Imagem da Aldeia Pataxó">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Barra Velha</h2>
+        <div class="buttons-container">
+            <button onclick="setCoordinates(-16.84498554723923, -39.27653491694678, 'Barra Velha')">Buscar no Mapa</button>
+            <img id="foto" src="imgpataxo.png" alt="Imagem da Aldeia Pataxó">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Mata Medonha</h2>
+        <div class="buttons-container">
+            <button onclick="setCoordinates(-16.155996491194188, -39.00795576100987, 'Mata Medonha')">Buscar no Mapa</button>
+            <img id="foto" src="imgpataxo.png" alt="Imagem da Aldeia Pataxó">
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        let map;
+
+        function setCoordinates(lat, lng, placeName) {
+            // Define as coordenadas e o nome do lugar
+            const coordinates = [lat, lng];
+            renderMap(coordinates, placeName);
+        }
+
+        function renderMap(coordinates, placeName) {
+            // Verifica se o mapa já foi criado, se sim, move a visualização
+            if (map) {
+                map.setView(coordinates, 14);
+            } else {
+                // Cria o mapa
+                map = L.map('map').setView(coordinates, 13);
+
+                // Adiciona a camada do mapa
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© OpenStreetMap'
+                }).addTo(map);
+            }
+
+            // Adiciona um marcador no mapa com o nome do lugar
+            L.marker(coordinates).addTo(map)
+                .bindPopup(`${placeName}`)
+                .openPopup();
+        }
+    </script>
+</body>
+</html>
+
+

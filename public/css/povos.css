@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+*{
+    font-family: 'Inconsolata';
+}
+
+body{
+    background-image: url(../images/6501483.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 11%;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.cards-catalog {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px; 
+    height: 100vh; 
+    margin: 20px;
+}
+
+.pinpoint {
+    width: 20px;
+}
+
+a {
+    text-decoration: none;
+}
