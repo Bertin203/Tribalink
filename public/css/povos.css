@@ -34,3 +34,7 @@ body{
 a {
     text-decoration: none;
 }
+
+#capa {
+    height: 200px;
+}

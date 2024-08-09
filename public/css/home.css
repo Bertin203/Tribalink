@@ -8,7 +8,7 @@ body{
     background-image: url(../images/6501483.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: 11%;
+    background-position-x: center;
     color: #000000;
     text-align: center;
     display: flex;
@@ -35,6 +35,7 @@ body{
 .intro {
     padding-top: 50px;
     width: 80%;
+    padding-left: 0;
     margin: 0 auto;
     font-size: 18px;
     font-weight: 600;
@@ -47,4 +48,13 @@ a {
 
 .button {
     margin: 20px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: fit-content;
+}
+
+.justificado {
+    text-align: justify;
 }

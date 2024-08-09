@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/public/css/tha-fene.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+<h1 id="title">Reserva Indígena Thá-Fene</h1>
+
+<div class="info">
+  <img id="thafene" src="../public/images/thafene2.jpg" alt="Tha-Fene">
+  <div class="buttons-container">
+    <p class="justificado">A Thá-Fene é uma reserva indígena localizada em Lauro de Freitas, Bahia, cujos índios fundadores são Kariri-Xocó e Fulni-Ô, deslocados, respectivamente, de Alagoas (Sementeira) e Pernambuco (Águas Belas). <br>
+    A partir da Thá-Fene os fundadores prosseguem estabelecendo contatos com os seus grupos étnicos, bem como atraindo para a nova reserva outros Kariri-Xocó e Fulni-Ô. Assim, a partir desta reserva, eles expandem suas relações, criando um novo contexto de relações interétnicas.<br> 
+    Neste contexto, “aprender”, “ensinar” e “trocar” tornaram-se palavras-chave. As atividades da Thá-Fene, dentro e externamente, estão voltadas sobretudo para o público não-indígena, para a afirmação das suas identidades indígenas específicas. </p>
+    <button onclick="setCoordinates(-12.860564995209662, -38.32782879853511, 'R. Quingoma de Fora, Estr. Quengoma, Jardim Castelão, Lauro de Freitas - BA, 42726-820')">
+      <img class="pinpoint" src="../public/images/placeholder.png" alt="">Lauro de Freitas - BA
+    </button>
+  </div>
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  let map;
+
+  function setCoordinates(lat, lng, placeName) {
+  // Define as coordenadas e o nome do lugar
+    const coordinates = [lat, lng];
+    renderMap(coordinates, placeName);
+  }
+
+  function renderMap(coordinates, placeName) {
+    // Verifica se o mapa já foi criado, se sim, move a visualização
+    if (map) {
+      map.setView(coordinates, 14);
+    } else {
+      // Cria o mapa
+      map = L.map('map').setView(coordinates, 13);
+      // Adiciona a camada do mapa
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+      }).addTo(map);
+      }
+      // Adiciona um marcador no mapa com o nome do lugar
+      L.marker(coordinates).addTo(map)
+      .bindPopup(`${placeName}`)
+      .openPopup();
+      }
+</script>

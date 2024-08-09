@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+*{
+    font-family: 'Inconsolata';
+}
+
+body{
+  background-image: url(../images/6501483.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  color: #000000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#title {
+  background-color: rgb(226, 226, 69);
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  height: 550px;
+}
+
+.info p {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  text-align: justify;
+  font-style: italic;
+  font-weight: 500;
+}
+
+#thafene{
+  width: 500px;
+}
+
+.buttons-container {
+  align-items: center;
+  padding: 32px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  font-weight: 700;
+}
+
+img {
+  border-radius: 10px;
+}
+
+#map {
+  height: 400px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+
+.pinpoint {
+  width: 25px;
+  padding-right: 5px;
+}

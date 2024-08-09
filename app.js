@@ -21,4 +21,4 @@ app.listen(port, () => {
 })
 
 
-app.use("/", require("./routes/user"))
+app.use("/", require("./routes/routes"))

@@ -4,8 +4,37 @@
     font-family: 'Inconsolata';
 }
 
-.logo_sobre {
-    position: absolute;
-    left: 80px;
-    top: 80px;
+body{
+    background-image: url("/public/images/haha.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 11%;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre_content{
+    background-color: rgba(255, 255, 255, 0.836);
+    font-size: 16px;
+    font-weight: 350;
+    width: fit-content;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 3%;
+}
+
+h2 {
+    font-weight: 800;
+}
+
+.carrossel {
+    width: 100%;
+
+}
+
+.justificado {
+    text-align: justify;
 }
